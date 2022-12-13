@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Smoke suite]">
+  <listeners>
+    <listener class-name="com.bank.customlisteners.CustomListeners"/>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test thread-count="5" name="smoke Test(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+        <include name="regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.bank.testsuite.BankTest">
+        <methods>
+          <include name="customerShouldWithdrawMoneySuccessfully"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="inIt"/>
+        </methods>
+      </class> <!-- com.bank.testsuite.BankTest -->
+    </classes>
+  </test> <!-- smoke Test(failed) -->
+</suite> <!-- Failed suite [Smoke suite] -->
